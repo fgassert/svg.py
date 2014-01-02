@@ -1,15 +1,45 @@
-#######################################
-#Svg generator 
-#
-#Francis Gassert
-#8-28-2011
-#######################################
+"""
+svg.py 
+
+A simple library for generating svgs in Python
+
+Example usage:
+    
+    from svg import *        
+    mysvg = svg(100,100)
+    mysvg.add( rect(10,10,80,80,"black",1,"red") )
+    gen(svg,"mysvg.svg")
+
+
+The MIT License (MIT)
+
+Copyright (c) 2011 Francis Gassert
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+"""
 
 import string, webbrowser, os
 
 #######################################
 def gen(svgobj, filename, open_in_browser=True):
     """Saves the svg and opens it in a web browser, overwrites existing files, autoappends extension"""
+    
     tout = """<?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
     """
