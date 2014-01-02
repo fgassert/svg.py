@@ -6,9 +6,9 @@ A simple library for generating svgs in Python
 Example usage:
     
     from svg import *        
-    mysvg = svg(100,100)
+    mysvg = svg(100,100,"")
     mysvg.add( rect(10,10,80,80,"black",1,"red") )
-    gen(svg,"mysvg.svg")
+    gen(mysvg,"mysvg.svg")
 
 
 The MIT License (MIT)
@@ -268,3 +268,9 @@ class title(SvgSuper):
 
     def _closestring(self):
         return '</title>'
+    
+    
+if __name__ == '__main__':
+    mysvg = svg(100,100,"")
+    mysvg.add( rect(10,10,80,80,"black",1,"red") )
+    gen(mysvg,"mysvg.svg")
